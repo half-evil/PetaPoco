@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using PetaTest;
+
 
 namespace PetaPoco.Tests
 {
@@ -24,7 +26,8 @@ namespace PetaPoco.Tests
 				ti.PrimaryKey = "id";
 			}
 		}
-		public bool MapPropertyToColumn(System.Reflection.PropertyInfo pi, ref string columnName, ref bool resultColumn)
+
+	    public bool MapPropertyToColumn(System.Reflection.PropertyInfo pi, ref string columnName, ref bool resultColumn)
 		{
 			if (pi.DeclaringType == typeof(Poco2))
 			{
@@ -55,7 +58,7 @@ namespace PetaPoco.Tests
 		}
 
 
-		public Func<object, object> GetFromDbConverter(System.Reflection.PropertyInfo pi, Type SourceType)
+		public Func<object, object> GetFromDbConverter(PropertyInfo pi, Type SourceType)
 		{
 			return null;
 		}

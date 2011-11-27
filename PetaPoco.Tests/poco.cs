@@ -83,4 +83,17 @@ namespace PetaPoco.Tests
 		public string email { get; set; }
 		public string name { get; set; }
 	}
+
+    [TableName("petapoco")]
+    [PrimaryKey("id")]
+    class deco_version
+    {
+        public long id { get; set; }
+        public string title { get; set; }
+        public bool draft { get; set; }
+        public string content { get; set; }
+        public DateTime date_created { get; set; }
+        public State state { get; set; }
+        [VersionColumn] public int version { get; set; }
+    }
 }

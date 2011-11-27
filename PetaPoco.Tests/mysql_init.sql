@@ -11,6 +11,7 @@ CREATE TABLE petapoco (
 	state			smallint UNSIGNED NOT NULL,
 	`col w space`	int,
 	nullreal		float NULL,
+	version			int,
 	
 	PRIMARY KEY (id)
 ) ENGINE=INNODB;
